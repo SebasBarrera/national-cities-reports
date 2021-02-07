@@ -24,17 +24,17 @@ namespace Project_1
             Console.WriteLine("holamundo");
             Console.WriteLine(x.Type);
 
-            String[] lines = File.ReadAllLine("./data/dataset.csv");
+            string[] lines = File.ReadAllLines("./data/dataset.csv");
 
             foreach (String line in lines) {
             
-                String values = line.Split(',');
+                string[] values = line.Split(',');
 
-                String codDpto = values[0];
-                String codMpio = values[1];
-                String dpto = values[2];
-                String mpio = values[3];
-                String tipo = values[4];
+                string codDpto = values[0];
+                string codMpio = values[1];
+                string dpto = values[2];
+                string mpio = values[3];
+                string type = values[4];
             }
         }
     }
