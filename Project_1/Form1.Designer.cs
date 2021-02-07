@@ -33,6 +33,8 @@ namespace Project_1
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.loadData = new System.Windows.Forms.Button();
+            this.path = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -64,7 +66,7 @@ namespace Project_1
             "X",
             "Y",
             "Z"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 58);
+            this.comboBox1.Location = new System.Drawing.Point(37, 164);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
@@ -73,7 +75,7 @@ namespace Project_1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 27);
+            this.label1.Location = new System.Drawing.Point(53, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 1;
@@ -81,27 +83,49 @@ namespace Project_1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(176, 27);
+            this.button1.Location = new System.Drawing.Point(243, 137);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 46);
+            this.button1.Size = new System.Drawing.Size(152, 58);
             this.button1.TabIndex = 2;
             this.button1.Text = "Mostrar información según la letra escogida";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(176, 79);
+            this.button2.Location = new System.Drawing.Point(472, 137);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 50);
+            this.button2.Size = new System.Drawing.Size(152, 58);
             this.button2.TabIndex = 3;
             this.button2.Text = "Mostrar gráfico pastel de la cantidad de municipios de cada departamento";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // loadData
+            // 
+            this.loadData.Location = new System.Drawing.Point(37, 48);
+            this.loadData.Name = "loadData";
+            this.loadData.Size = new System.Drawing.Size(118, 35);
+            this.loadData.TabIndex = 4;
+            this.loadData.Text = "Cargar archivo...";
+            this.loadData.UseVisualStyleBackColor = true;
+            this.loadData.Click += new System.EventHandler(this.loadData_Click);
+            // 
+            // path
+            // 
+            this.path.AutoSize = true;
+            this.path.Location = new System.Drawing.Point(226, 59);
+            this.path.Name = "path";
+            this.path.Size = new System.Drawing.Size(169, 13);
+            this.path.TabIndex = 5;
+            this.path.Text = "-- Ruta del archivo seleccionado --";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 145);
+            this.ClientSize = new System.Drawing.Size(672, 475);
+            this.Controls.Add(this.path);
+            this.Controls.Add(this.loadData);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -120,6 +144,8 @@ namespace Project_1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button loadData;
+        private System.Windows.Forms.Label path;
     }
 }
 
