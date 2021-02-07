@@ -1,0 +1,10 @@
+C:\Users\casam\Downloads\PI1\national-cities-reports\Project_1\bin\Release\Project_1.exe.config
+C:\Users\casam\Downloads\PI1\national-cities-reports\Project_1\bin\Release\Project_1.exe
+C:\Users\casam\Downloads\PI1\national-cities-reports\Project_1\bin\Release\Project_1.pdb
+C:\Users\casam\Downloads\PI1\national-cities-reports\Project_1\obj\Release\Project_1.csprojAssemblyReference.cache
+C:\Users\casam\Downloads\PI1\national-cities-reports\Project_1\obj\Release\Project_1.Form1.resources
+C:\Users\casam\Downloads\PI1\national-cities-reports\Project_1\obj\Release\Project_1.Properties.Resources.resources
+C:\Users\casam\Downloads\PI1\national-cities-reports\Project_1\obj\Release\Project_1.csproj.GenerateResource.cache
+C:\Users\casam\Downloads\PI1\national-cities-reports\Project_1\obj\Release\Project_1.csproj.CoreCompileInputs.cache
+C:\Users\casam\Downloads\PI1\national-cities-reports\Project_1\obj\Release\Project_1.exe
+C:\Users\casam\Downloads\PI1\national-cities-reports\Project_1\obj\Release\Project_1.pdb
