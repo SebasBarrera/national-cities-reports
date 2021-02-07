@@ -89,6 +89,7 @@ namespace Project_1
             this.button1.TabIndex = 2;
             this.button1.Text = "Mostrar información según la letra escogida";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 

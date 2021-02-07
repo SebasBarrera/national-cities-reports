@@ -7,16 +7,16 @@ namespace Project_1.model
 {
     class Dane
     {
-        private Municipality municipalities = new ArrayList();
+        private ArrayList municipalities = new ArrayList();
 
         public Dane()
         {
 
         }
 
-        public loadData()
+        public loadData(string absPath)
         {
-            string[] lines = File.ReadAllLines("./data/dataset.csv");
+            string[] lines = File.ReadAllLines(absPath);
 
 
 
@@ -51,6 +51,8 @@ namespace Project_1.model
                     selected.add(municipalities[i]);
                 }
             }
+
+            return selected;
         }
     }
 }

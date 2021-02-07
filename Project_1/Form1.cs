@@ -9,6 +9,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_1.model;
 
 namespace Project_1
 {
@@ -26,7 +27,7 @@ namespace Project_1
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedLetter =  comboBox1.GetItemText(comboBox1.SelectedItem);
+            string selectedLetter = comboBox1.GetItemText(comboBox1.SelectedItem);
             MessageBox.Show(selectedLetter);
         }
 
@@ -39,6 +40,19 @@ namespace Project_1
                 {
                     string absolutePathFile = fileExplorer.FileName;
                     SetPathInLabel(absolutePathFile);
+
+                    if (absolutePathFile.Contains(".csv"))
+                    {
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error, no se puede leer el archivo seleccionado.");
+                        SetPathInLabel("-- Ruta del archivo seleccionado --");
+                    }
+
+
                 }
                 catch (SecurityException ex)
                 {
@@ -57,6 +71,21 @@ namespace Project_1
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string labelText = path.Text;
+            string textComboBox = comboBox1.GetItemText(comboBox1.SelectedItem);
+
+            if (!(Char.Equals(labelText[0], "-")) && !(String.Equals(textComboBox, "")))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Error, no has seleccionado una letra o no has cargado un archivo");
+            }
         }
     }
 }
