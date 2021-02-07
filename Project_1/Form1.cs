@@ -37,8 +37,8 @@ namespace Project_1
             {
                 try
                 {
-                    string names = fileExplorer.FileName;
-                    SetPathInLabel(names);
+                    string absolutePathFile = fileExplorer.FileName;
+                    SetPathInLabel(absolutePathFile);
                 }
                 catch (SecurityException ex)
                 {
