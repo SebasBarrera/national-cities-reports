@@ -35,6 +35,13 @@ namespace Project_1
             this.button2 = new System.Windows.Forms.Button();
             this.loadData = new System.Windows.Forms.Button();
             this.path = new System.Windows.Forms.Label();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.codeDpmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeMun = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDpmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameMun = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -120,11 +127,51 @@ namespace Project_1
             this.path.TabIndex = 5;
             this.path.Text = "-- Ruta del archivo seleccionado --";
             // 
+            // dgv
+            // 
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codeDpmt,
+            this.codeMun,
+            this.nameDpmt,
+            this.nameMun,
+            this.type});
+            this.dgv.Location = new System.Drawing.Point(37, 212);
+            this.dgv.Name = "dgv";
+            this.dgv.Size = new System.Drawing.Size(587, 251);
+            this.dgv.TabIndex = 6;
+            // 
+            // codeDpmt
+            // 
+            this.codeDpmt.HeaderText = "Código Departamento";
+            this.codeDpmt.Name = "codeDpmt";
+            // 
+            // codeMun
+            // 
+            this.codeMun.HeaderText = "Código Municipio";
+            this.codeMun.Name = "codeMun";
+            // 
+            // nameDpmt
+            // 
+            this.nameDpmt.HeaderText = "Nombre Departamento";
+            this.nameDpmt.Name = "nameDpmt";
+            // 
+            // nameMun
+            // 
+            this.nameMun.HeaderText = "Nombre Municipio";
+            this.nameMun.Name = "nameMun";
+            // 
+            // type
+            // 
+            this.type.HeaderText = "Tipo";
+            this.type.Name = "type";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 475);
+            this.ClientSize = new System.Drawing.Size(665, 540);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.path);
             this.Controls.Add(this.loadData);
             this.Controls.Add(this.button2);
@@ -134,6 +181,7 @@ namespace Project_1
             this.Name = "Form1";
             this.Text = "Tarea #7 ";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,6 +195,12 @@ namespace Project_1
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button loadData;
         private System.Windows.Forms.Label path;
+        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeDpmt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeMun;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDpmt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameMun;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
     }
 }
 

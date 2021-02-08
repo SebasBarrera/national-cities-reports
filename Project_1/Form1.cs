@@ -15,6 +15,7 @@ namespace Project_1
 {
     public partial class Form1 : Form
     {
+        Controller controller = new Controller();
         public Form1()
         {
             InitializeComponent();
@@ -27,8 +28,7 @@ namespace Project_1
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedLetter = comboBox1.GetItemText(comboBox1.SelectedItem);
-            MessageBox.Show(selectedLetter);
+           
         }
 
         private void loadData_Click(object sender, EventArgs e)
@@ -43,7 +43,24 @@ namespace Project_1
 
                     if (absolutePathFile.Contains(".csv"))
                     {
+                        List<string[]> rowsDvg = controller.LoadData(absolutePathFile);
+                        foreach (string[] line in rowsDvg)
+                        {
 
+                            DataGridViewRow dataGridViewRow = new DataGridViewRow();
+                            dataGridViewRow.CreateCells(dgv);
+
+                            
+
+                            dataGridViewRow.Cells[0].Value = line[0];
+                            dataGridViewRow.Cells[1].Value = line[1];
+                            dataGridViewRow.Cells[2].Value = line[2];
+                            dataGridViewRow.Cells[3].Value = line[3];
+                            dataGridViewRow.Cells[4].Value = line[4];
+
+                            dgv.Rows.Add(dataGridViewRow);
+
+                        }
 
                     }
                     else
