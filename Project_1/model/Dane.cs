@@ -1,56 +1,75 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Project_1.model
 {
     class Dane
     {
-        private Municipality municipalities = new ArrayList();
+        List<Municipality> Municipalities = new List<Municipality>();
 
-        public Dane()
+        public void AddMunicipality(Municipality mun)
         {
-
+            Municipalities.Add(mun);
+            
         }
 
-        public loadData()
+        public List<string[]> FilteredList(string initial)
         {
-            string[] lines = File.ReadAllLines("./data/dataset.csv");
+            List<string[]> rowsDvg = new List<string[]>();
+            char initialChar = initial[0];
 
-
-
-            foreach (String line in lines)
+            foreach (Municipality mun in Municipalities)
             {
-
-                string[] values = line.Split(',');
-
-                string codDpto = values[0];
-                string codMpio = values[1];
-                string dpto = values[2];
-                string mpio = values[3];
-                string type = values[4];
-
-
-                municipalities.add(new Municipality(codDpto, codMpio, dpto, mpio, type));
-            }
-        }
-
-        public ArrayList<Municipality> municipalities
-        {
-            get; set;
-        }
-
-        public Arraylist<Municipality> selectedByChar(char x)
-        {
-             Municipality selected = new ArrayList();
-            foreach (Municipality i in municipalities)
-            {
-                if (municipalities[i].charAt(0).Equals(x)
+                string depName = mun.NameDepartment;
+                if (depName[0].Equals(initialChar))
+                    
                 {
-                    selected.add(municipalities[i]);
+                    string[] line = {mun.CodeDepartment, mun.CodeMunicipality, mun.NameDepartment, mun.NameMunicipality, mun.Type };
+                    rowsDvg.Add(line);
                 }
             }
+
+
+
+            return rowsDvg;
         }
+
+        public List<string[]> MunicipiosPorDepartamento()
+        {
+            List<string[]> datos = new List<string[]>();
+            string actual = "ANTIOQUIA";
+            int amountMunPerDep = 0;
+            foreach (Municipality mun in Municipalities)
+            {
+                //int codeDepartment = Convert.ToInt32(mun.CodeDepartment);
+                
+                if (mun.NameDepartment.Equals(actual))
+                {
+                    amountMunPerDep++;
+                }
+                else
+                {
+                
+                        string amount = amountMunPerDep + "";
+                        string[] dato = { amount, mun.NameDepartment };
+                        datos.Add(dato);
+                        amountMunPerDep = 1;
+                        actual = mun.NameDepartment;
+                    
+                   
+                }
+            }
+                return datos;
+        }
+
+
+
+
+
+       
     }
 }

@@ -16,7 +16,7 @@ namespace Project_1.model
             this.CodeMunicipality = codeMunicipality;
             this.NameDepartment = nameDepartment;
             this.NameMunicipality = nameMunicipality;
-            this.Type = Type;
+            this.Type = type;
         }
 
         public string CodeDepartment

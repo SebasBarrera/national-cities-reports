@@ -28,3 +28,4 @@ C:\Users\HOLBERTON\Documents\Sebas\national-cities-reports\Project_1\obj\Debug\P
 C:\Users\HOLBERTON\Documents\Sebas\national-cities-reports\Project_1\bin\Debug\Project_1.exe.config
 C:\Users\HOLBERTON\Documents\Sebas\national-cities-reports\Project_1\bin\Debug\Project_1.exe
 C:\Users\HOLBERTON\Documents\Sebas\national-cities-reports\Project_1\bin\Debug\Project_1.pdb
+C:\Users\HOLBERTON\Documents\Sebas\national-cities-reports\Project_1\obj\Debug\Project_1.Form2.resources
