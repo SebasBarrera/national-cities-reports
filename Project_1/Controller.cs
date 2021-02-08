@@ -42,5 +42,12 @@ namespace Project_1
 
             return rowsList;
         }
+
+        public List<string[]> RetrieveFilteredList(string initial)
+        {
+            
+            return adminDane.FilteredList(initial);
+        }
     }
+    //endOfClass
 }

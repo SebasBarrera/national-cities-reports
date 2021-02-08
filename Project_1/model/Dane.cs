@@ -10,29 +10,38 @@ namespace Project_1.model
     class Dane
     {
         List<Municipality> Municipalities = new List<Municipality>();
-       
+
         public void AddMunicipality(Municipality mun)
         {
             Municipalities.Add(mun);
-           
+
         }
 
-        
+        public List<string[]> FilteredList(string initial)
+        {
+            List<string[]> rowsDvg = new List<string[]>();
+            char initialChar = initial[0];
 
-   
+            foreach (Municipality mun in Municipalities)
+            {
+                string depName = mun.NameDepartment;
+                if (depName[0].Equals(initialChar))
+                    
+                {
+                    string[] line = {mun.CodeDepartment, mun.CodeMunicipality, mun.NameDepartment, mun.NameMunicipality, mun.Type };
+                    rowsDvg.Add(line);
+                }
+            }
 
-        //public List<Municipality> selectedByChar(char x)
-        //{
-        //     Municipality selected = new List();
-        //    foreach (Municipality i in municipalities)
-        //    {
-        //        if (municipalities[i].charAt(0).Equals(x)
-        //        {
-        //            selected.add(municipalities[i]);
-        //        }
-        //    }
 
-        //    return selected;
-        //}
+
+            return rowsDvg;
+        }
+
+
+
+
+
+       
     }
 }

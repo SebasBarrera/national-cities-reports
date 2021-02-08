@@ -44,23 +44,8 @@ namespace Project_1
                     if (absolutePathFile.Contains(".csv"))
                     {
                         List<string[]> rowsDvg = controller.LoadData(absolutePathFile);
-                        foreach (string[] line in rowsDvg)
-                        {
-
-                            DataGridViewRow dataGridViewRow = new DataGridViewRow();
-                            dataGridViewRow.CreateCells(dgv);
-
-                            
-
-                            dataGridViewRow.Cells[0].Value = line[0];
-                            dataGridViewRow.Cells[1].Value = line[1];
-                            dataGridViewRow.Cells[2].Value = line[2];
-                            dataGridViewRow.Cells[3].Value = line[3];
-                            dataGridViewRow.Cells[4].Value = line[4];
-
-                            dgv.Rows.Add(dataGridViewRow);
-
-                        }
+                        dgv.AllowUserToAddRows = false;
+                        showGrid(rowsDvg);
 
                     }
                     else
@@ -80,6 +65,28 @@ namespace Project_1
             }
         }
 
+        private void showGrid(List<string[]> rowsDvg)
+        {
+            dgv.Rows.Clear();
+            foreach (string[] line in rowsDvg)
+            {
+
+                DataGridViewRow dataGridViewRow = new DataGridViewRow();
+                dataGridViewRow.CreateCells(dgv);
+
+
+
+                dataGridViewRow.Cells[0].Value = line[0];
+                dataGridViewRow.Cells[1].Value = line[1];
+                dataGridViewRow.Cells[2].Value = line[2];
+                dataGridViewRow.Cells[3].Value = line[3];
+                dataGridViewRow.Cells[4].Value = line[4];
+
+                dgv.Rows.Add(dataGridViewRow);
+
+            }
+        }
+
         private void SetPathInLabel(string text)
         {
             path.Text = text;
@@ -95,14 +102,16 @@ namespace Project_1
             string labelText = path.Text;
             string textComboBox = comboBox1.GetItemText(comboBox1.SelectedItem);
 
-            if (!(Char.Equals(labelText[0], "-")) && !(String.Equals(textComboBox, "")))
+            if (labelText.Contains(".csv") && !(String.Equals(textComboBox, "")))
             {
-
+                showGrid(controller.RetrieveFilteredList(textComboBox));
             }
             else
             {
                 MessageBox.Show("Error, no has seleccionado una letra o no has cargado un archivo");
             }
         }
+
+        
     }
 }
